@@ -1,0 +1,18 @@
+CREATE DATABASE EmployeeDB
+Go
+
+USE EmployeeDB
+Go
+
+Create table Employees
+(
+	ID int primary key identity,
+	FisrtName nvarchar(50),
+	LastName nvarchar(50),
+	Gender nvarchar(50),
+	Salary int
+)
+Go
+
+Insert into Employees values ('Douglas', 'Cardoso', 'Male', 1235);
+Insert into Employees values ('Claudia', 'Rezende', 'Female', 5321);

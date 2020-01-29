@@ -1,0 +1,14 @@
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\bin\Debug\netcoreapp2.2\WebAPIDemo.deps.json
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\bin\Debug\netcoreapp2.2\WebAPIDemo.runtimeconfig.json
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\bin\Debug\netcoreapp2.2\WebAPIDemo.runtimeconfig.dev.json
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\bin\Debug\netcoreapp2.2\WebAPIDemo.dll
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\bin\Debug\netcoreapp2.2\WebAPIDemo.pdb
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.csprojAssemblyReference.cache
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.csproj.CoreCompileInputs.cache
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.RazorAssemblyInfo.cache
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.RazorAssemblyInfo.cs
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.AssemblyInfoInputs.cache
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.AssemblyInfo.cs
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.RazorTargetAssemblyInfo.cache
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.dll
+C:\Users\Douglas\trainning\CSharp\WebAPIDemo\WebAPIDemo\obj\Debug\netcoreapp2.2\WebAPIDemo.pdb
