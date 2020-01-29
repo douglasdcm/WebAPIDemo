@@ -1,3 +1,5 @@
+--https://www.youtube.com/watch?v=nMGlaiNBbNU&list=PL6n9fhu94yhW7yoUOGNOfHurUE6bpOO2b&index=4
+
 CREATE DATABASE EmployeeDB
 Go
 
@@ -16,3 +18,4 @@ Go
 
 Insert into Employees values ('Douglas', 'Cardoso', 'Male', 1235);
 Insert into Employees values ('Claudia', 'Rezende', 'Female', 5321);
+Insert into Employees values ('Heliodora', 'Rezende', 'Female', 1358);
