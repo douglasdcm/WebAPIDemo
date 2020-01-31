@@ -12,13 +12,31 @@ namespace EmployeeService.Controllers
 {
     public class EmployeesController : ApiController
     {
-        public HttpResponseMessage Get()
+        public HttpResponseMessage Get(string gender="All")
         {
+
             try
             {
-                using (EmployeeDBEntities entities = new EmployeeDBEntities())
+                using (EmployeeDBEntities employeeDBEntities = new EmployeeDBEntities())
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, entities.Employees.ToList());
+                    var genderLow = gender.ToLower();
+
+                    switch (genderLow)
+                    {
+                        case "all":
+                            return Request.CreateResponse(HttpStatusCode.OK, 
+                                employeeDBEntities.Employees.ToList());
+                        case "male":
+                            return Request.CreateResponse(HttpStatusCode.OK, 
+                                employeeDBEntities.Employees.Where(e => e.Gender == genderLow).ToList());
+                        case "female":
+                            return Request.CreateResponse(HttpStatusCode.OK,
+                                employeeDBEntities.Employees.Where(e => e.Gender == genderLow).ToList());
+                        default:
+                            return Request.CreateResponse(HttpStatusCode.BadRequest,
+                                "Value for gender must be All, Male or Female. " +
+                                "The gender " + gender + " is not valid." );
+                    }
                 }
             }catch(Exception ex)
             {
@@ -26,7 +44,8 @@ namespace EmployeeService.Controllers
             }
         }
 
-        public HttpResponseMessage Get(int id)
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage ReadEmployeeById(int id)
         {
             try
             {
@@ -97,7 +116,7 @@ namespace EmployeeService.Controllers
             }
         }
 
-        public HttpResponseMessage Put(int id, [FromBody]Employee employee)
+        public HttpResponseMessage Put([FromUri]int id, [FromBody]Employee employee)
         {
             try
             {
