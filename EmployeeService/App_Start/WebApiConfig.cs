@@ -21,6 +21,8 @@ namespace EmployeeService
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            //config.Filters.Add(new RequireHttpsAttribute());
+
             //config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
             
             //config.Formatters.Remove(config.Formatters.XmlFormatter);

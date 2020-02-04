@@ -7,35 +7,35 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Net.Http;
 using System.Net;
+using System.Threading;
 
 namespace EmployeeService.Controllers
 {
     public class EmployeesController : ApiController
     {
+        [BasicAuthentication]
         public HttpResponseMessage Get(string gender="All")
         {
+
+            string username = Thread.CurrentPrincipal.Identity.Name;
+
 
             try
             {
                 using (EmployeeDBEntities employeeDBEntities = new EmployeeDBEntities())
                 {
-                    var genderLow = gender.ToLower();
+                    var userLow = username.ToLower();
 
-                    switch (genderLow)
+                    switch (userLow)
                     {
-                        case "all":
-                            return Request.CreateResponse(HttpStatusCode.OK, 
-                                employeeDBEntities.Employees.ToList());
                         case "male":
                             return Request.CreateResponse(HttpStatusCode.OK, 
-                                employeeDBEntities.Employees.Where(e => e.Gender == genderLow).ToList());
+                                employeeDBEntities.Employees.Where(e => e.Gender == userLow).ToList());
                         case "female":
                             return Request.CreateResponse(HttpStatusCode.OK,
-                                employeeDBEntities.Employees.Where(e => e.Gender == genderLow).ToList());
+                                employeeDBEntities.Employees.Where(e => e.Gender == userLow).ToList());
                         default:
-                            return Request.CreateResponse(HttpStatusCode.BadRequest,
-                                "Value for gender must be All, Male or Female. " +
-                                "The gender " + gender + " is not valid." );
+                            return Request.CreateResponse(HttpStatusCode.BadRequest);
                     }
                 }
             }catch(Exception ex)

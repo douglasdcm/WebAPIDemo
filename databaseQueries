@@ -19,3 +19,14 @@ Go
 Insert into Employees values ('Douglas', 'Cardoso', 'Male', 1235);
 Insert into Employees values ('Claudia', 'Rezende', 'Female', 5321);
 Insert into Employees values ('Heliodora', 'Rezende', 'Female', 1358);
+
+-------------------------------
+Create Table EmployeeDB.dbo.Users
+(
+  Id int identity primary key,
+  Username nvarchar(100),
+  Password nvarchar(100)
+)
+
+INSERT INTO EmployeeDB.dbo.Users values ('male', 'male')
+INSERT INTO EmployeeDB.dbo.Users values ('female', 'female')

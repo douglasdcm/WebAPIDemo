@@ -9,27 +9,53 @@
             var ulEmployees = $('#ulEmployees');
 
             $('#btn').click(function () {
+
+                var username = $('#txtUsername').val();
+                var password = $('#txtPassword').val();
+
+
+
                 $.ajax({
                     type: 'GET',
                     url: 'api/employees',
                     dataType: 'json',
+                    headers: {
+                        'Authorization': 'Basic ' + btoa(username + ':' + password)
+                    },
                     success: function (data) {
                         ulEmployees.empty();
                         $.each(data, function (index, val) {
-                            var fullName = val.FisrtName + ' ' val.LastName;
-                        ulEmployees.append('<li>' + fullName + '</li>');
-                    });
-            }
+                            var fullName = val.FisrtName + ' ' + val.LastName;
+                            ulEmployees.append('<li>' + fullName + ' (' + val.Gender + ')</li>');
+                        });
+                    },
+                    complete: function (jqXHR) {
+                        if (jqXHR.status == '401') {
+                            ulEmployees.empty();
+                            ulEmployees.append('<li style="color:red">' + jqXHR.status + ': ' + jqXHR.statusText + '</li>');
+                        }
+                    }
+                })
+            });
+            
+
+            $('#btnClear').click(function () {
+            ulEmployees.empty();
+            });
         });
 
-        $('#btnClear').click(function () {
-            ulEmployees.empty();
-        });
+        
+
 
     </script>
 </head>
 <body>
-    <input id="btn" type="button" value="Get All Employees" />
+
+    Username : <input type="text" id="txtUsername"/>
+    Password : <input type="password" id="txtPassword"/>
+    <br />
+    <br />
+    <input id="btn" type="button" value="Authenticate and Get Employees" />
     <input id="btnClear" type="button" value="Clear" />
     <ul id="ulEmployees"></ul>
 </body>
